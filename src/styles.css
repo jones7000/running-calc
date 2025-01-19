@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  max-width: 300px;
+  max-width: 320px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
@@ -14,7 +14,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 320px) {
   .container {
     max-width: 90%;
     /* Larger max width for mobile */
