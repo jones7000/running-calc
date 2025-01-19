@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="heading">
+    <h2>Heart Rate ❤️</h2>
+  </div>
+  <div class="form-group">
+    <label for="hfMax">HFmax eingeben:</label>
+    <input
+      type="number"
+      id="hfMax"
+      [(ngModel)]="hfMax"
+      class="form-control"
+      placeholder="z.B. 190"
+    />
+  </div>
+  <button (click)="calculateZones()" class="btn btn-primary">Berechne</button>
+
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Zone</th>
+        <th>Prozent</th>
+        <th>Bereich</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let zone of zones">
+        <td>{{ zone.name }}</td>
+        <td>{{ zone.percentage }}</td>
+        <td>{{ zone.range || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,60 @@
+body {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 16px;
+  color: #474747;
+}
+
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 90%;
+    /* Larger max width for mobile */
+  }
+}
+
+button {
+  margin-left: 10px;
+  background-color: #73a1e5;
+  /* Rote Farbe */
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #4689ee;
+  /* Dunklerer Rotton beim Hover */
+}
+
+input {
+  flex: 1;
+  /* Füllt den verfügbaren Platz */
+  padding: 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 3px;
+  padding: 5px;
+}
+
+.form-group label {
+  font-weight: bold;
+}

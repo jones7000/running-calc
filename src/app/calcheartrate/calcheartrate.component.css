@@ -1,0 +1,39 @@
+.form-group {
+    margin-bottom: 20px;
+  }
+  
+/* Tabelle für Heart Rate */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    text-align: center;
+    padding: 8px 12px; /* Kleiner Abstand zwischen Zelleninhalten */
+  }
+  
+  .table thead th {
+    border-bottom: 2px solid #ddd; /* Horizontaler Trennstrich unter der Kopfzeile */
+  }
+  
+  .table tbody tr {
+    border-bottom: 1px solid #f0f0f0; /* Horizontaler Trennstrich zwischen Zeilen */
+  }
+  
+  .table tbody tr:last-child {
+    border-bottom: none; /* Kein Trennstrich nach der letzten Zeile */
+  }
+  
+  .table th {
+    background-color: #f8f9fa; /* Dezenter Hintergrund für Kopfzeile */
+  }
+  
+  .table td {
+    background-color: #ffffff; /* Weißer Hintergrund für Zellen */
+  }
+  
+  .table tbody td:first-child { 
+    text-align: left; /* Linksbündige Ausrichtung für die erste Spalte */
+  }

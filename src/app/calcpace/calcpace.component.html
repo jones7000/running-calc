@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="heading">
+    <h2>Pace 🏃‍♂️</h2>
+  </div>
+  
+  <div class="forms">
+    <!-- Eingabe für Distanz -->
+    <div class="form-group">
+      <label for="distance">Distanz (km):</label>
+      <input
+        type="number"
+        id="distance"
+        [(ngModel)]="distance"
+        class="form-control"
+        placeholder="10km"
+      />
+    </div>
+
+    <!-- Eingabe für Zeit -->
+    <div class="form-group">
+      <label for="time">Zeit (HH:MM:SS):</label>
+      <input
+        type="text"
+        id="time"
+        [(ngModel)]="time"
+        class="form-control"
+        placeholder="HH:MM:SS"
+      />
+    </div>
+
+    <!-- Eingabe für Pace -->
+    <div class="form-group">
+      <label for="pace">Pace (MM:SS):</label>
+      <input
+        type="text"
+        id="pace"
+        [(ngModel)]="pace"
+        class="form-control"
+        placeholder="05:00"
+      />
+    </div>
+  </div>
+
+  <!-- Berechnungsbutton -->
+  <div class="button-group">
+    <button (click)="calculate()" class="btn btn-primary">Berechne</button>
+    <button (click)="reset()" class="btn btn-secondary">Reset</button>
+  </div>
+</div>
