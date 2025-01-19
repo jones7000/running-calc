@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./calcheartrate.component.css'],
 })
 export class CalcheartrateComponent {
-  hfMax: number = 0; // Eingabe für die HFmax
+  hfMax: number | null = null;; // Eingabe für die HFmax
   zones: { name: string; percentage: string; range: string | null }[] = [
     { name: 'langsamer DL', percentage: '70-75%', range: null },
     { name: 'ruhiger DL', percentage: '75-80%', range: null },
@@ -19,7 +19,7 @@ export class CalcheartrateComponent {
   ];
 
   calculateZones(): void {
-    if (this.hfMax > 0) {
+    if (this.hfMax! > 0) {
       this.zones = [
         { name: 'langsamer DL', percentage: '70-75%', range: this.calculateRange(0.7, 0.75)},
         { name: 'ruhiger DL', percentage: '75-80%', range: this.calculateRange(0.75, 0.8) },
@@ -33,8 +33,8 @@ export class CalcheartrateComponent {
   }
 
   private calculateRange(minFactor: number, maxFactor: number): string {
-    const min = Math.round(this.hfMax * minFactor);
-    const max = Math.round(this.hfMax * maxFactor);
+    const min = Math.round(this.hfMax! * minFactor);
+    const max = Math.round(this.hfMax! * maxFactor);
     return `${min} - ${max}`;
   }
 }

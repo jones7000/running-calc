@@ -17,14 +17,12 @@ body {
 @media (max-width: 320px) {
   .container {
     max-width: 90%;
-    /* Larger max width for mobile */
   }
 }
 
 button {
   margin-left: 10px;
   background-color: #73a1e5;
-  /* Rote Farbe */
   border: none;
   color: white;
   cursor: pointer;
@@ -35,12 +33,10 @@ button {
 
 button:hover {
   background-color: #4689ee;
-  /* Dunklerer Rotton beim Hover */
 }
 
 input {
   flex: 1;
-  /* Füllt den verfügbaren Platz */
   padding: 5px;
   font-size: 1rem;
   text-align: center;

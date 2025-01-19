@@ -1,19 +1,16 @@
 <div class="container">
-  <div class="heading">
-    <h2>Heart Rate ❤️</h2>
-  </div>
+  <h2>Heart Rate ❤️</h2>
   <div class="form-group">
-    <label for="hfMax">HFmax eingeben:</label>
+    <label for="hfMax">HFmax (bpm):</label>
     <input
       type="number"
       id="hfMax"
       [(ngModel)]="hfMax"
       class="form-control"
-      placeholder="z.B. 190"
+      placeholder="190"
     />
   </div>
   <button (click)="calculateZones()" class="btn btn-primary">Berechne</button>
-
 
   <table class="table table-bordered">
     <thead>
