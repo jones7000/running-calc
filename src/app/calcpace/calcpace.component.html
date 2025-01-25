@@ -14,31 +14,35 @@
 
     <!-- Eingabe für Zeit -->
     <div class="form-group">
-      <label for="time">Zeit (HH:MM:SS):</label>
+      <label for="time">Zeit:</label>
       <input
         type="text"
         id="time"
         [(ngModel)]="time"
         class="form-control"
-        placeholder="00:50:00"
+        placeholder="HH:MM:SS oder MM:SS"
+        (input)="validateTime()"
       />
+      <div *ngIf="timeError" class="error">{{ timeError }}</div>
     </div>
 
     <!-- Eingabe für Pace -->
     <div class="form-group">
-      <label for="pace">Pace (MM:SS):</label>
+      <label for="pace">Pace:</label>
       <input
         type="text"
         id="pace"
         [(ngModel)]="pace"
         class="form-control"
-        placeholder="05:00"
+        placeholder="MM:SS"
+        (input)="validatePace()"
       />
+      <div *ngIf="paceError" class="error">{{ paceError }}</div>
     </div>
 
   <!-- Berechnungsbutton -->
   <div class="button-group">
-    <button (click)="calculate()" class="btn btn-primary">Berechne</button>
+    <button (click)="calculate()" [disabled]="!isFormValid()" class="btn btn-primary">Berechne</button>
     <button (click)="reset()" class="btn btn-secondary">Reset</button>
   </div>
 </div>

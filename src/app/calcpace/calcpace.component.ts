@@ -14,6 +14,9 @@ export class CalcpaceComponent {
   time: string = ''; // Eingabe für Zeit (im Format HH:MM:SS)
   pace: string = ''; // Eingabe für Pace (im Format MM:SS)
 
+  timeError: string | null = null;
+  paceError: string | null = null;
+
   calculate(): void {
     if (this.distance && this.time) {
       // Berechne Pace, wenn Distanz und Zeit vorhanden sind
@@ -73,5 +76,32 @@ export class CalcpaceComponent {
     this.distance = null;
     this.time = '';
     this.pace = '';
+    this.timeError = null;
+    this.paceError = null;
+  }
+
+  validatePace(): void {
+    const paceRegex = /^\d{2}:\d{2}$/;
+    if (this.pace && !paceRegex.test(this.pace)) {
+      this.paceError = 'Pace muss im Format MM:SS sein';
+    } else {
+      this.paceError = null;
+    }
+  }
+
+  validateTime(): void {
+    const timeRegex = /^(\d{2}:\d{2}:\d{2}|\d{2}:\d{2})$/;
+    if (this.time && !timeRegex.test(this.time)) {
+      this.timeError = 'Zeit muss im Format HH:MM:SS oder MM:SS sein';
+    } else {
+      this.timeError = null;
+    }
+  }
+
+  isFormValid(): boolean {
+    const timeValid = !this.timeError && this.time.trim() !== '';
+    const paceValid = !this.paceError && this.pace.trim() !== '';
+
+    return timeValid || paceValid;
   }
 }
