@@ -14,9 +14,22 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 320px) {
+@media (max-width: 480px) {
   .container {
-    max-width: 90%;
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  input, select, button {
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px;
   }
 }
 
@@ -60,4 +73,25 @@ input {
 .form-group input {
   padding: 8px;
   font-size: 1rem;
+}
+
+select {
+  flex: 1;
+  padding: 5px;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  /* appearance: none;  Entfernt Standard-Pfeile */
+  cursor: pointer;
+}
+
+select:hover {
+  border-color: #73a1e5;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4689ee;
+  box-shadow: 0 0 3px rgba(70, 137, 238, 0.5);
 }

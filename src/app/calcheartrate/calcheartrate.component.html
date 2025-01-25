@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Heart Rate ❤️</h2>
+  <h2>Herzfrequenz ❤️</h2>
   <div class="form-group">
     <label for="hfMax">HFmax (bpm):</label>
     <input
@@ -10,8 +10,15 @@
       placeholder="190"
     />
   </div>
+  <div class="form-group">
+  <label for="method">Methode:</label>
+    <select id="method" name="Berechnung" (change)="onMethodChange($event)">
+      <option value="zones">Zones</option>
+      <option value="runnersworld">Runners World</option>
+    </select>
+  </div>
   <button (click)="calculateZones()" class="btn btn-primary">Berechne</button>
-
+  
   <table class="table table-bordered">
     <thead>
       <tr>
