@@ -8,6 +8,8 @@
       [(ngModel)]="hfMax"
       class="form-control"
       placeholder="190"
+      [min]="1"
+      [max]="220"
     />
   </div>
   <div class="form-group">
@@ -17,7 +19,7 @@
       <option value="runnersworld">Runners World</option>
     </select>
   </div>
-  <button (click)="calculateZones()" class="btn btn-primary">Berechne</button>
+  <button (click)="calculateZones()" [disabled]="!validateHFMax()" class="btn btn-primary">Berechne</button>
   
   <table class="table table-bordered">
     <thead>

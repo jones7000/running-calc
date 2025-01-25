@@ -88,3 +88,9 @@ select:focus {
   border-color: #4689ee;
   box-shadow: 0 0 3px rgba(70, 137, 238, 0.5);
 }
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}

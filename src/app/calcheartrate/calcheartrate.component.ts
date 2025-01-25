@@ -72,5 +72,9 @@ export class CalcheartrateComponent {
       this.calculateZones(); // Tabelle neu berechnen
     }
   }
+
+  validateHFMax(): boolean {
+    return this.hfMax != null && this.hfMax >= 1 && this.hfMax <= 220;
+  }
   
 }
