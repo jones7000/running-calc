@@ -9,6 +9,7 @@
         [(ngModel)]="distance"
         class="form-control"
         placeholder="10"
+        (keyup.enter)="isFormValid() && calculate()"
       />
     </div>
 
@@ -21,28 +22,49 @@
         [(ngModel)]="time"
         class="form-control"
         placeholder="HH:MM:SS oder MM:SS"
-        (input)="validateTime()"
+        (input)="formatTimeInput($event)"
+        (keyup.enter)="isFormValid() && calculate()"
+        maxlength="8"
       />
       <div *ngIf="timeError" class="error">{{ timeError }}</div>
     </div>
 
     <!-- Eingabe für Pace -->
     <div class="form-group">
-      <label for="pace">Pace:</label>
-      <input
-        type="text"
-        id="pace"
-        [(ngModel)]="pace"
-        class="form-control"
-        placeholder="MM:SS"
-        (input)="validatePace()"
-      />
+      <label for="pace">Pace (min/km):</label>
+      <div class="input-with-icon">
+        <input
+          type="text"
+          id="pace"
+          [(ngModel)]="pace"
+          class="form-control"
+          placeholder="MM:SS"
+          (input)="formatPaceInput($event)"
+          (keyup.enter)="isFormValid() && calculate()"
+          maxlength="5"
+        />
+        <button 
+          class="info-button" 
+          [class.active]="pace && !paceError"
+          (click)="togglePaceInfo()"
+          type="button"
+          title="Zeige Vorhersagen">
+          ℹ️
+        </button>
+      </div>
       <div *ngIf="paceError" class="error">{{ paceError }}</div>
     </div>
 
-  <!-- Berechnungsbutton -->
-  <div class="button-group">
-    <button (click)="calculate()" [disabled]="!isFormValid()" class="btn btn-primary">Berechne</button>
-    <button (click)="reset()" class="btn btn-secondary">Reset</button>
-  </div>
+    <!-- Pace Info Modal -->
+    <app-pace-info-modal 
+      *ngIf="showPaceInfo" 
+      [paceInSeconds]="getPaceInSeconds()"
+      (click)="closePaceInfo()"
+    ></app-pace-info-modal>
+
+    <!-- Berechnungsbutton -->
+    <div class="button-group">
+      <button (click)="calculate()" [disabled]="!isFormValid()" class="btn btn-primary">Berechne</button>
+      <button (click)="reset()" class="btn btn-secondary">Reset</button>
+    </div>
 </div>

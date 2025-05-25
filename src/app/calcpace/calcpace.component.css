@@ -3,3 +3,33 @@
     font-size: 0.875rem;
     margin-top: 5px;
 }
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon input {
+    flex: 1;
+}
+
+.info-button {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 1.2rem;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.info-button.active {
+    opacity: 1;
+}
+
+.info-button:hover.active {
+    transform: scale(1.1);
+}
